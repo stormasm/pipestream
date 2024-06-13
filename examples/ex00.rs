@@ -1,8 +1,8 @@
 use std::io::{stdout, Write};
 use std::time::{Duration, Instant};
 
-const BUF_SIZE: usize = 8 * 1024;
-const WRITE_CNT: usize = 8 * 1024;
+const BUF_SIZE: usize = 8;
+const WRITE_CNT: usize = 1;
 const BYTES_LEN: usize = BUF_SIZE * WRITE_CNT;
 const SAMPLES: usize = 15;
 
