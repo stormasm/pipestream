@@ -2,9 +2,9 @@ use std::io::{stdout, Write};
 use std::time::{Duration, Instant};
 
 const BUF_SIZE: usize = 8;
-const WRITE_CNT: usize = 1;
+const WRITE_CNT: usize = 4;
 const BYTES_LEN: usize = BUF_SIZE * WRITE_CNT;
-const SAMPLES: usize = 2;
+const SAMPLES: usize = 10;
 
 const BUF: [u8; BUF_SIZE] = [0xFF; BUF_SIZE];
 
@@ -13,6 +13,8 @@ fn main() {
 
     let mut samples: Vec<_> = (0..SAMPLES).map(|_| run(&mut stdout)).collect();
     samples.sort();
+
+    eprintln!("{:?}", samples);
 
     let min = samples[0];
     let max = samples[SAMPLES - 1];
